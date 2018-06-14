@@ -1,0 +1,29 @@
+[33mcommit ab2230a40ea434b426791d656d2484a9f36d0c7c[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: João Henrique <hiquecs@gmail.com>
+Date:   Wed Jun 13 01:29:39 2018 -0300
+
+    Criando Repository e Service Para Categoria
+
+[33mcommit 95638acfab70dab2df2d9c2d07ad79eb93d01fe2[m
+Author: João Henrique <hiquecs@gmail.com>
+Date:   Wed Jun 13 00:32:25 2018 -0300
+
+    Banco de dados h2 e criação automatica da base de dados
+
+[33mcommit 8a5a8758a7a8f7f4ca8731f77c240bba9f5feb93[m
+Author: João Henrique <hiquecs@gmail.com>
+Date:   Tue Jun 12 23:18:34 2018 -0300
+
+    Testando a primeira classe de dominio - Categoria
+
+[33mcommit 534c8913273faf681657abe177b731376f131fc2[m
+Author: João Henrique <hiquecs@gmail.com>
+Date:   Tue Jun 12 22:42:32 2018 -0300
+
+    Rest testado
+
+[33mcommit 7bf823e9f204aa8236bfe48103033dabf66e3e96[m
+Author: João Henrique <hiquecs@gmail.com>
+Date:   Tue Jun 12 21:46:47 2018 -0300
+
+    Projeto criado

@@ -15,19 +15,19 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 public class Cidade implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private String nome;
-	
+
 	@JsonManagedReference
 	@ManyToOne
 	@JoinColumn(name = "estado_id")
 	private Estado estado;
-	
+
 	public Cidade() {
-		
+
 	}
 
 	@Override
@@ -85,5 +85,5 @@ public class Cidade implements Serializable {
 		this.nome = nome;
 		this.estado = estado;
 	}
- 
+
 }

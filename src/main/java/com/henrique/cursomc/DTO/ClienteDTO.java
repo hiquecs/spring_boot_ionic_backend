@@ -8,17 +8,19 @@ import javax.validation.constraints.NotEmpty;
 import org.hibernate.validator.constraints.Length;
 
 import com.henrique.cursomc.domain.Cliente;
+import com.henrique.cursomc.services.validation.ClienteUpdate;
 
+@ClienteUpdate
 public class ClienteDTO implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
 	private Integer id;
-	
+
 	@NotEmpty(message = "Preenchimento obrigatorio ")
 	@Length(min = 5, max = 120, message = "O tamanho deve ter entre 05 e 120 caracteres")
 	private String nome;
-	
+
 	@NotEmpty(message = "Preenchimento obrigatorio ")
 	@Email(message = "Email invalido")
 	private String email;

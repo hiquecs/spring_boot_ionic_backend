@@ -23,7 +23,7 @@ public class Produto implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private String nome;
-	private Double peco;
+	private Double preco;
 
 	@JsonIgnore
 	@ManyToMany
@@ -34,12 +34,12 @@ public class Produto implements Serializable {
 	@OneToMany(mappedBy = "id.produto")
 	private Set<ItemPedido> itens = new HashSet<>();
 
-	public Produto(Integer id, String nome, Double peco) {
+	public Produto(Integer id, String nome, Double preco) {
 
 		super();
 		this.id = id;
 		this.nome = nome;
-		this.peco = peco;
+		this.preco = preco;
 	}
 
 	public Produto() {
@@ -79,12 +79,12 @@ public class Produto implements Serializable {
 		this.nome = nome;
 	}
 
-	public Double getPeco() {
-		return peco;
+	public Double getPreco() {
+		return preco;
 	}
 
-	public void setPeco(Double peco) {
-		this.peco = peco;
+	public void setPeco(Double preco) {
+		this.preco = preco;
 	}
 
 	public List<Categoria> getCategorias() {

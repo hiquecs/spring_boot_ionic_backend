@@ -17,9 +17,12 @@ import com.henrique.cursomc.DTO.ClienteNewDTO;
 import com.henrique.cursomc.domain.Cidade;
 import com.henrique.cursomc.domain.Cliente;
 import com.henrique.cursomc.domain.Endereco;
+import com.henrique.cursomc.domain.enums.Perfil;
 import com.henrique.cursomc.domain.enums.TipoCliente;
 import com.henrique.cursomc.repositories.ClienteRepository;
 import com.henrique.cursomc.repositories.EnderecoRepository;
+import com.henrique.cursomc.security.UserSS;
+import com.henrique.cursomc.services.Exceptions.AuthorizationException;
 import com.henrique.cursomc.services.Exceptions.DataIntegrityException;
 import com.henrique.cursomc.services.Exceptions.ObjectNotFoundException;
 
@@ -36,6 +39,11 @@ public class ClienteService {
 	private EnderecoRepository enderecoRepository;
 
 	public Cliente find(Integer id) {
+		UserSS user = UserService.authenticated();
+		if (user == null || !user.hasRole(Perfil.ADMIN) && ! id.equals(user.getId()) ) {
+			throw new AuthorizationException("Acesso negado");
+			
+		}
 		Optional<Cliente> obj = repo.findById(id);
 		return obj.orElseThrow(() -> new ObjectNotFoundException(
 				"Objeto não encontrado! Id: " + id + ", Tipo: " + Cliente.class.getName()));
